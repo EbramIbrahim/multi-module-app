@@ -1,6 +1,8 @@
 package com.example.network
 
-import com.example.network.models.Character
+import com.example.network.mapper.toDomainCharacter
+import com.example.network.models.domain.Character
+import com.example.network.models.remote.CharacterDto
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp
@@ -30,6 +32,8 @@ class KtoClient {
     }
 
     suspend fun getCharacter(id: Int): Character {
-        return client.get("character/$id").body()
+        return client.get("character/$id")
+            .body<CharacterDto>()
+            .toDomainCharacter()
     }
 }
