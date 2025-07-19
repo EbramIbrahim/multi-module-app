@@ -1,1 +1,1 @@
-## Rick & Morty for modularizatio
+## Rick & Morty for modularization
