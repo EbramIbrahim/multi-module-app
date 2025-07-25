@@ -13,6 +13,10 @@ appcompat = "1.7.0"
 material = "1.12.0"
 ktorVersion = "2.3.6"
 
+navigationCompose = "2.9.0"
+kotlinxSerializationJson = "1.7.3"
+
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
@@ -39,14 +43,17 @@ ktor-client-logging = { module = "io.ktor:ktor-client-logging", version.ref = "k
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorVersion" }
 ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
 
+# navigation
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-
+jetbrainsKotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 [bundles]
 ktor = [
     "ktor-client-core", "ktor-client-okhttp", "ktor-client-logging",
