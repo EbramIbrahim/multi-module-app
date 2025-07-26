@@ -1,7 +1,6 @@
-package com.example.rickmorty.presentation.component
+package com.example.rickmorty.presentation.component.character
 
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape

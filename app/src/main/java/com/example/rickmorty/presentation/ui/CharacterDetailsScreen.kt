@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import coil3.compose.AsyncImage
 import com.example.network.models.domain.Character
 import com.example.network.models.domain.CharacterStatus
-import com.example.rickmorty.presentation.component.CharacterDetailsNamePlateComponent
+import com.example.rickmorty.presentation.component.character.CharacterDetailsNamePlateComponent
 import com.example.rickmorty.ui.theme.RickAction
 import com.example.rickmorty.ui.theme.RickTextPrimary
 
