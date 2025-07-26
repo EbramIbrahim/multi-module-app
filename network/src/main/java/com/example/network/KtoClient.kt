@@ -2,7 +2,10 @@ package com.example.network
 
 import com.example.network.mapper.toDomainCharacter
 import com.example.network.models.domain.Character
+import com.example.network.models.domain.Episode
 import com.example.network.models.remote.CharacterDto
+import com.example.network.models.remote.EpisodeDto
+import com.example.network.models.remote.toDomainEpisode
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.engine.okhttp.OkHttp
@@ -39,7 +42,14 @@ class KtoClient {
         }
     }
 
-
+    suspend fun getEpisode(episodeIds: List<Int>): ApiOperation<List<Episode>> {
+        val separatedIds = episodeIds.joinToString(separator = ",")
+        return safeApiCall {
+            client.get("episode/$separatedIds")
+                .body<List<EpisodeDto>>()
+                .map { it.toDomainEpisode() }
+        }
+    }
 
     private inline fun <T> safeApiCall(apiCall: () -> T): ApiOperation<T> {
         return try {
